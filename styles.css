@@ -1,0 +1,321 @@
+/* styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Space Grotesk", "Arial", sans-serif;
+  font-size: 16px;
+  color: #666;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-image: linear-gradient(to bottom left, #BAD5B6 0%, #FFF9E2 50%, #AEDCFB 100%);
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.glow-text:hover::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background: #fff17a;
+  box-shadow: 0 0 10px 10px #fff17a;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  flex-shrink: 0;
+  padding: 0.5em 1em 0.2em;
+  background: white;
+  box-shadow: 0 0 10px 10px white;
+  transition: height 0.25s linear;
+}
+header.hidden {
+  height: 0.5em;
+}
+header h1 {
+  flex-shrink: 0;
+  order: 1;
+  display: block;
+  margin: 0;
+  margin-right: 0.66em;
+  font-size: 1.25em;
+  font-weight: normal;
+}
+header #search-bar {
+  display: block;
+  flex-basis: 100px;
+  flex-grow: 1;
+  max-width: 380px;
+  order: 2;
+  height: 1.5em;
+  padding: 0.25em;
+  border: 1px solid #ddd;
+  border-radius: 0.75em;
+  color: #666;
+  font-family: inherit;
+  font-size: 1em;
+  text-align: center;
+  transition: outline 2s linear;
+  -webkit-appearance: none;
+}
+header #search-bar::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ccc;
+  opacity: 1;
+  /* Firefox */
+}
+header #search-bar:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #ccc;
+}
+header #search-bar::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #ccc;
+}
+header #search-bar:focus {
+  border: 1px solid #6D0CCF;
+  outline: none;
+}
+@media only screen and (max-width: 512px) {
+  header #search-bar {
+    flex-shrink: 0;
+    flex-basis: 100%;
+    max-width: 100%;
+    order: 4;
+    margin-top: 0.5em;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  header #search-bar {
+    position: absolute;
+    top: 0.6em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 380px;
+    margin-bottom: 0.2em;
+  }
+}
+header nav {
+  order: 3;
+  flex-shrink: 0;
+  display: block;
+  color: #888;
+}
+header nav span {
+  position: relative;
+  cursor: pointer;
+  margin-left: 1em;
+}
+header nav span.on {
+  color: #6D0CCF;
+}
+header #soft-white-edge {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 10px;
+  width: 100%;
+}
+
+#about {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 380px;
+  height: auto;
+  z-index: 100;
+  padding: 1.5em;
+  box-shadow: 0 0 10px 10px white;
+  background: white;
+  border-radius: 1.5em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+  display: flex;
+  flex-direction: column;
+}
+#about.on {
+  opacity: 1;
+  pointer-events: all;
+}
+#about .legend {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+#about .legend .legend-item {
+  background-repeat: no-repeat;
+  padding-top: 64px;
+}
+#about .legend .legend-item.legend-picnic-table {
+  background-image: url(images/markers/single/marker5.svg);
+  background-size: 17px 24px;
+  background-position: center 17px;
+}
+#about .legend .legend-item.legend-picnic-table-area {
+  position: relative;
+  background-image: url(images/markers/multi/5.svg);
+  background-size: 52px 52px;
+  background-position: top center;
+}
+#about .legend .legend-item.legend-picnic-table-area::after {
+  content: "24";
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+#about .legend .legend-item.legend-search-result {
+  background-image: url(images/markers/single/search.svg);
+  background-size: 17px 24px;
+  background-position: center 17px;
+}
+#about .legend .legend-item .label {
+  text-align: center;
+  font-size: 12px;
+}
+#about p {
+  margin-top: 2em;
+}
+#about a {
+  color: inherit;
+}
+#about .credits {
+  margin-top: 2em;
+  font-size: 12px;
+}
+
+#options {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 480px;
+  height: auto;
+}
+#options .option {
+  position: relative;
+  width: 25%;
+  cursor: pointer;
+}
+#options .option .option_text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+#options .option .option_text span.option_label {
+  font-size: 1.5em;
+}
+#options .option .option_text span.option_value {
+  font-family: "Arial", sans-serif;
+}
+#options .option.off {
+  color: #ccc;
+}
+#options .option::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 10px white;
+  background: white;
+}
+
+div.pac-container {
+  margin-top: 0.5em;
+  border-top: none;
+  box-shadow: 0 0 10px 10px white;
+  font-family: inherit;
+  font-size: inherit;
+  z-index: 10;
+}
+div.pac-container div.pac-item {
+  background: none;
+  position: relative;
+  color: #888;
+  border-top: none;
+  cursor: pointer;
+  overflow: visible;
+}
+div.pac-container div.pac-item .pac-icon-marker {
+  background-image: url(images/markers/single/pac-icon-marker.svg);
+  background-size: 7px 10px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+div.pac-container div.pac-item .pac-icon-search {
+  background-image: url(images/markers/single/pac-icon-search.svg);
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+div.pac-container div.pac-item span.pac-item-query {
+  color: #666;
+  font-weight: normal;
+}
+div.pac-container div.pac-item:hover::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 25%;
+  border-radius: 50%;
+  background: #fff17a;
+  box-shadow: 0 0 10px 10px #fff17a;
+  opacity: 0.5;
+  z-index: -1;
+}
+div.pac-container.pac-logo::after {
+  display: none;
+}
+
+#map {
+  background: #E5E3DF;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+/*# sourceMappingURL=styles.css.map */

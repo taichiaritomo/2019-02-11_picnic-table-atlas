@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"> 
+    <meta charset="utf-8">
+    <title>World Picnic Tables!</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+
+    <header>
+      <h1>Picnic Table Atlas</h1>
+      <input id="search-bar" type="text" placeholder="Search Places">
+      <nav>
+        <!-- <span id="options-button" class="glow-text">options</span> -->
+        <span id="about-button" class="glow-text">Info</span>
+      </nav>
+      <div id="soft-white-edge"></div>
+    </header>
+
+    <!-- <div id="options">
+      <div class="option glow-text off" id="option-satellite">
+        <div class="option_text">
+          <span class="option_label">Satellite</span>
+          <span class="option_value">OFF</span>
+        </div>
+      </div>
+      <div class="option glow-text" id="option-labels">
+          <div class="option_text">
+              <span class="option_label">Labels</span>
+              <span class="option_value"></span>
+            </div>
+      </div>
+      <div class="option glow-text" id="option-businesses">
+          <div class="option_text">
+              <span class="option_label">Businesses</span>
+              <span class="option_value"></span>
+            </div>
+      </div>
+    </div> -->
+
+    <div id="about">
+      <div class="legend">
+        <div class="legend-item legend-picnic-table">
+          <div class="label">
+            picnic<br>table
+          </div>
+        </div>
+        <div class="legend-item legend-picnic-table-area">
+          <div class="label">
+            area with<br>24 tables
+          </div>
+        </div>
+        <div class="legend-item legend-search-result">
+          <div class="label">
+            search<br>result
+          </div>
+        </div>
+      </div>
+      <p>
+          Picnic table data is sourced from Open Street Maps, a community-driven wiki atlas. Know of a picnic table that's not pictured here? Add it at <a href="https://openstreetmaps.org">osm.org</a>!
+      </p>
+      <div class="credits">
+        Map API - <a href="https://developers.google.com/maps/documentation/javascript/tutorial">Google Maps</a><br>
+        Design - <a href="https://taichi.pink">Taichi Aritomo</a>
+      </div>
+    </div>
+
+    <div id="map"></div>
+
+
+
+
+    <!-- csv parser -->
+    <script src="js/papaparse.min.js"></script>
+
+    <!-- custom google maps styles (from map styling wizard https://mapstyle.withgoogle.com/) -->
+    <script src="js/mapstyles.js"></script>
+
+    <!-- Google Maps Marker Clusterer -->
+    <script src="js/markerclusterer.js"></script>
+
+      
+
+
+
+    <script src="js/yo.js"></script>
+
+    <!-- my scripts -->
+    <script src="js/script.js"></script>
+
+
+    
+    <!-- Google Maps JS API with Places Library -->
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyCYcTO2uK_yjgU8Aa3OTplYwBEMfxIIp4w&libraries=places"></script>
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyCN_ijnVdZJVA_WO2Kmt6LD_Ng5zxdpfrE&libraries=places"></script> -->
+    <!-- Actual key: AIzaSyCN_ijnVdZJVA_WO2Kmt6LD_Ng5zxdpfrE -->
+
+    
+    </body>
+</html>
