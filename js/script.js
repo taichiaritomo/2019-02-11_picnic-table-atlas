@@ -72,6 +72,7 @@ async function initMap() {
     minZoom: 2,
     mapTypeControl: false,
     fullscreenControl: false,
+    streetViewControl: false,
     styles: mapStyles
   });
 
